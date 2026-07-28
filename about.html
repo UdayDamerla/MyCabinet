@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About – Uday's Cabinet of Curiosities</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        parchment: '#F4F1EA',
+                        ink: '#1C1B1A',
+                        brass: '#BFA76A',
+                        forest: '#3A4D41',
+                        'sepia-dark': '#2A2622',
+                        'sepia-medium': '#3D3732',
+                    },
+                    fontFamily: {
+                        serif: ['"EB Garamond"', 'serif'],
+                        body: ['Lora', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-parchment text-ink dark:bg-sepia-dark dark:text-parchment transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav class="border-b border-ink/10 dark:border-brass/20 py-6">
+        <div class="max-w-3xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-lg tracking-wide hover:text-brass transition-colors">Home</a>
+            <div class="flex gap-8 items-center">
+                <a href="library.html" class="font-body text-sm tracking-wider uppercase opacity-70 hover:opacity-100 hover:text-brass transition-all">The Library</a>
+                <a href="about.html" class="font-body text-sm tracking-wider uppercase text-brass">About</a>
+                <button id="darkModeToggle" class="opacity-70 hover:opacity-100 transition-opacity" aria-label="Toggle dark mode">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path class="dark:hidden" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        <path class="hidden dark:block" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Content -->
+    <article class="max-w-3xl mx-auto px-6 py-16">
+
+        <header class="mb-16">
+            <h1 class="font-serif text-5xl md:text-6xl mb-6 leading-tight">
+                Why I Built This Cabinet
+            </h1>
+            <p class="font-body text-lg opacity-60">
+                A letter to you, whoever you are
+            </p>
+        </header>
+
+        <section class="prose-custom space-y-8">
+
+            <p class="font-body text-lg leading-relaxed">
+                <span class="font-serif text-5xl float-left mr-3 mt-1 leading-none text-brass">D</span>ear
+                friend,
+            </p>
+
+            <p class="font-body text-lg leading-relaxed">
+                I built this cabinet because I was tired of forgetting what mattered.
+            </p>
+
+            <p class="font-body text-lg leading-relaxed">
+                For years, I consumed. Articles, podcasts, videos, tweets. I'd read something brilliant, nod along,
+                feel that spark of recognition—<em>yes, that's exactly it</em>—and then, a week later, it was gone.
+                I'd remember the feeling but not the lesson. The headline but not the insight. The author's name
+                but not what they taught me.
+            </p>
+
+            <p class="font-body text-lg leading-relaxed">
+                This felt like a kind of betrayal. Not to the writers—they'd done their job. But to myself. I was
+                collecting wisdom like water in a sieve. Nothing stuck. Nothing accumulated. I was learning, but I
+                wasn't changing.
+            </p>
+
+            <div class="my-12 h-px bg-ink/10 dark:bg-brass/20"></div>
+
+            <p class="font-body text-lg leading-relaxed">
+                So I started writing notes. Not summaries—marginalia. A few sentences on what a piece taught me,
+                how it connected to something I already knew, what question it left me with. These weren't for
+                anyone else. They were for future me, the one who would forget.
+            </p>
+
+            <p class="font-body text-lg leading-relaxed">
+                Over time, patterns emerged. Certain themes kept appearing: how to think clearly, how to be patient,
+                how to understand others without losing yourself. Psychology, myth, history, politics—all pointing
+                at the same few truths from different angles.
+            </p>
+
+            <p class="font-body text-lg leading-relaxed">
+                This cabinet is where I keep those truths. Not as facts to memorize, but as lenses to see through.
+                Each artifact here has earned its place by changing how I think, feel, or act in the world. Some
+                are famous. Some are obscure. A few are my own attempts to articulate what I've learned.
+            </p>
+
+            <div class="my-12 h-px bg-ink/10 dark:bg-brass/20"></div>
+
+            <p class="font-body text-lg leading-relaxed">
+                I named it a "cabinet of curiosities" because that's what it is. In the Renaissance, scholars would
+                keep Wunderkammern—rooms filled with strange and wondrous objects. Fossils, maps, instruments, art.
+                Each piece was a doorway to understanding something about the world.
+            </p>
+
+            <p class="font-body text-lg leading-relaxed">
+                This is my version of that. But instead of fossils, I collect ideas. Instead of maps, I gather
+                perspectives. Each artifact is something that made me stop and think, "Oh. I didn't know that.
+                And now I do."
+            </p>
+
+            <p class="font-body text-lg leading-relaxed">
+                The goal isn't quantity. I'm not trying to read everything or know everything. I'm trying to
+                understand <em>something</em> deeply enough that it becomes part of how I see. Quality over speed.
+                Depth over breadth. Wisdom over information.
+            </p>
+
+            <div class="my-12 h-px bg-ink/10 dark:bg-brass/20"></div>
+
+            <p class="font-body text-lg leading-relaxed">
+                Three values anchor everything here:
+            </p>
+
+            <ul class="font-body text-lg leading-relaxed space-y-4 list-none pl-0">
+                <li class="border-l-2 border-brass/30 pl-6">
+                    <strong class="text-brass">Deep Understanding</strong> — I don't want surface-level takes.
+                    I want the kind of insight that reframes how you see a problem. The kind that sticks.
+                </li>
+                <li class="border-l-2 border-brass/30 pl-6">
+                    <strong class="text-brass">Patience</strong> — Wisdom isn't fast. It accumulates slowly,
+                    through repeated exposure, reflection, and time. I'm not racing to finish anything here.
+                </li>
+                <li class="border-l-2 border-brass/30 pl-6">
+                    <strong class="text-brass">Empathy</strong> — Every artifact in this cabinet is about people—how
+                    we think, how we hurt, how we grow. Understanding others is the foundation of everything else.
+                </li>
+            </ul>
+
+            <p class="font-body text-lg leading-relaxed">
+                If you care about those things too, you might find something here worth keeping.
+            </p>
+
+            <div class="my-12 h-px bg-ink/10 dark:bg-brass/20"></div>
+
+            <p class="font-body text-lg leading-relaxed">
+                A note on curation: I'm picky about what goes in. Not because I think I'm smarter than anyone else,
+                but because this space is sacred to me. I don't add things just because they're popular or because
+                someone told me I should. I add them because they changed me.
+            </p>
+
+            <p class="font-body text-lg leading-relaxed">
+                Some are essays. Some are books. Some are my own reflections. All of them sit together as equals
+                because, in the end, what matters isn't who wrote it—it's whether it's true, whether it's useful,
+                and whether it makes you more human.
+            </p>
+
+            <div class="my-12 h-px bg-ink/10 dark:bg-brass/20"></div>
+
+            <p class="font-body text-lg leading-relaxed">
+                This cabinet will grow slowly. I don't update it on a schedule. I add something when it earns its place.
+                That might be once a month. It might be once a year. I don't know, and I don't mind.
+            </p>
+
+            <p class="font-body text-lg leading-relaxed">
+                If you've made it this far, thank you for your patience. I hope you find something here that stays
+                with you the way these pieces have stayed with me.
+            </p>
+
+            <p class="font-body text-lg leading-relaxed">
+                Take your time. There's no rush.
+            </p>
+
+            <div class="mt-12 pt-8 border-t border-ink/10 dark:border-brass/20">
+                <p class="font-serif text-base tracking-wider opacity-60">
+                    With care,<br>
+                    — Uday
+                </p>
+            </div>
+
+        </section>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="border-t border-ink/10 dark:border-brass/20 mt-20">
+        <div class="max-w-3xl mx-auto px-6 py-12">
+            <p class="font-body text-sm opacity-60 mb-4 tracking-wide">
+                Collected slowly, by Uday
+            </p>
+            <blockquote class="font-serif text-base italic opacity-50 border-l-2 border-brass/30 pl-6">
+                "Wisdom is not what you know. It is how you hold what you know."
+            </blockquote>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

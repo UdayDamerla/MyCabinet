@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uday's Cabinet of Curiosities</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        parchment: '#F4F1EA',
+                        ink: '#1C1B1A',
+                        brass: '#BFA76A',
+                        forest: '#3A4D41',
+                        'sepia-dark': '#2A2622',
+                        'sepia-medium': '#3D3732',
+                    },
+                    fontFamily: {
+                        serif: ['"EB Garamond"', 'serif'],
+                        body: ['Lora', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-parchment text-ink dark:bg-sepia-dark dark:text-parchment transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav class="border-b border-ink/10 dark:border-brass/20 py-6">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-lg tracking-wide hover:text-brass transition-colors">Home</a>
+            <div class="flex gap-8 items-center">
+                <a href="library.html" class="font-body text-sm tracking-wider uppercase opacity-70 hover:opacity-100 hover:text-brass transition-all">The Library</a>
+                <a href="about.html" class="font-body text-sm tracking-wider uppercase opacity-70 hover:opacity-100 hover:text-brass transition-all">About</a>
+                <button id="darkModeToggle" class="opacity-70 hover:opacity-100 transition-opacity" aria-label="Toggle dark mode">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path class="dark:hidden" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        <path class="hidden dark:block" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="max-w-4xl mx-auto px-6 pt-20 pb-16">
+        <h1 class="font-serif text-6xl md:text-7xl lg:text-8xl mb-6 leading-tight">
+            Uday's Cabinet<br>of Curiosities
+        </h1>
+        <p class="font-body text-brass text-lg tracking-wide italic">
+            This is what shaped me
+        </p>
+    </header>
+
+    <!-- Welcome Note -->
+    <section class="max-w-4xl mx-auto px-6 py-12 border-t border-b border-ink/10 dark:border-brass/20">
+        <div class="max-w-2xl">
+            <p class="font-body text-lg leading-relaxed mb-4">
+                <span class="font-serif text-5xl float-left mr-3 mt-1 leading-none text-brass">T</span>his
+                is not a blog. This is a collection—gathered slowly, with care, like artifacts in a scholar's study.
+                Each piece here has taught me something about being human: how to think more clearly, feel more deeply,
+                or understand the world with a little more patience.
+            </p>
+            <p class="font-body text-lg leading-relaxed mb-4">
+                I built this cabinet to remember what matters. Not trends, not noise—just things worth sitting with.
+                Some are essays I've written. Most are works by others that shaped how I see. All of them belong here
+                because they changed something in me.
+            </p>
+            <p class="font-body text-lg leading-relaxed">
+                Welcome. Take your time. There's no rush.
+            </p>
+            <div class="mt-8 pt-6 border-t border-ink/10 dark:border-brass/20">
+                <p class="font-serif text-sm tracking-wider opacity-60">
+                    — Uday
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Currently on the Desk -->
+    <section class="max-w-4xl mx-auto px-6 py-20">
+        <h2 class="font-serif text-4xl mb-12 tracking-wide">Currently on the desk</h2>
+
+        <div class="space-y-12">
+            <!-- Artifact 1 -->
+            <article class="border-l-2 border-brass/30 pl-8 hover:border-brass transition-colors">
+                <div class="mb-3">
+                    <span class="inline-block font-body text-xs tracking-widest uppercase opacity-50 mb-2">[Thought]</span>
+                    <h3 class="font-serif text-2xl mb-2">
+                        <a href="artifact.html?id=2" class="hover:text-brass transition-colors">Literally Just Do Things</a>
+                    </h3>
+                    <p class="font-body text-sm opacity-60">by Erifili Gounari</p>
+                </div>
+                <div class="bg-ink/5 dark:bg-brass/10 p-6 italic font-body text-base leading-relaxed border-l border-brass/20">
+                    The simplest advice is often the hardest to follow. This essay reminded me that overthinking is just fear
+                    dressed up as strategy. Most of the time, the thing you're avoiding isn't actually hard—you're just scared
+                    of what happens if you try. So: literally just do things. Start messy. Start small. Just start.
+                </div>
+            </article>
+
+            <!-- Artifact 2 -->
+            <article class="border-l-2 border-brass/30 pl-8 hover:border-brass transition-colors">
+                <div class="mb-3">
+                    <span class="inline-block font-body text-xs tracking-widest uppercase opacity-50 mb-2">[Psychology]</span>
+                    <h3 class="font-serif text-2xl mb-2">
+                        <a href="artifact.html?id=6" class="hover:text-brass transition-colors">The Paradox of Craving to Be Seen But Fearing Being Known</a>
+                    </h3>
+                    <p class="font-body text-sm opacity-60">by Harls</p>
+                </div>
+                <div class="bg-ink/5 dark:bg-brass/10 p-6 italic font-body text-base leading-relaxed border-l border-brass/20">
+                    We all want to be understood, but we're terrified of being truly seen. This piece named something I'd felt
+                    but never articulated: the gap between wanting attention and fearing intimacy. It's easier to perform than
+                    to be vulnerable. Easier to curate than to reveal. This essay is a mirror for anyone hiding in plain sight.
+                </div>
+            </article>
+
+            <!-- Artifact 3 -->
+            <article class="border-l-2 border-brass/30 pl-8 hover:border-brass transition-colors">
+                <div class="mb-3">
+                    <span class="inline-block font-body text-xs tracking-widest uppercase opacity-50 mb-2">[Thought]</span>
+                    <h3 class="font-serif text-2xl mb-2">
+                        <a href="artifact.html?id=4" class="hover:text-brass transition-colors">We Should All Talk to Strangers</a>
+                    </h3>
+                    <p class="font-body text-sm opacity-60">by Angelina Hazzouri</p>
+                </div>
+                <div class="bg-ink/5 dark:bg-brass/10 p-6 italic font-body text-base leading-relaxed border-l border-brass/20">
+                    In a world where we've been taught to fear strangers, this essay argues the opposite: talking to people we
+                    don't know might be the most human thing we can do. It reminds me that connection isn't just for the people
+                    we already love. Sometimes the most meaningful conversations happen with someone you'll never see again.
+                </div>
+            </article>
+        </div>
+
+        <!-- Serendipity Button -->
+        <div class="mt-16 pt-12 border-t border-ink/10 dark:border-brass/20 text-center">
+            <a href="library.html?random=true"
+               class="inline-block font-body text-sm tracking-widest uppercase px-8 py-3 border-2 border-ink dark:border-brass hover:bg-ink hover:text-parchment dark:hover:bg-brass dark:hover:text-sepia-dark transition-all">
+                Serendipity →
+            </a>
+            <p class="font-body text-xs opacity-50 mt-4 tracking-wide">Discover a random artifact</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-ink/10 dark:border-brass/20 mt-20">
+        <div class="max-w-4xl mx-auto px-6 py-12">
+            <p class="font-body text-sm opacity-60 mb-4 tracking-wide">
+                Collected slowly, by Uday
+            </p>
+            <blockquote class="font-serif text-base italic opacity-50 border-l-2 border-brass/30 pl-6">
+                "Wisdom is not what you know. It is how you hold what you know."
+            </blockquote>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

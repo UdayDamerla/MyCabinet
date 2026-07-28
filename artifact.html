@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artifact – Uday's Cabinet of Curiosities</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        parchment: '#F4F1EA',
+                        ink: '#1C1B1A',
+                        brass: '#BFA76A',
+                        forest: '#3A4D41',
+                        'sepia-dark': '#2A2622',
+                        'sepia-medium': '#3D3732',
+                    },
+                    fontFamily: {
+                        serif: ['"EB Garamond"', 'serif'],
+                        body: ['Lora', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-parchment text-ink dark:bg-sepia-dark dark:text-parchment transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav class="border-b border-ink/10 dark:border-brass/20 py-6">
+        <div class="max-w-3xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-lg tracking-wide hover:text-brass transition-colors">Home</a>
+            <div class="flex gap-8 items-center">
+                <a href="library.html" class="font-body text-sm tracking-wider uppercase opacity-70 hover:opacity-100 hover:text-brass transition-all">The Library</a>
+                <a href="about.html" class="font-body text-sm tracking-wider uppercase opacity-70 hover:opacity-100 hover:text-brass transition-all">About</a>
+                <button id="darkModeToggle" class="opacity-70 hover:opacity-100 transition-opacity" aria-label="Toggle dark mode">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path class="dark:hidden" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        <path class="hidden dark:block" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Container -->
+    <article class="max-w-3xl mx-auto px-6 py-16">
+
+        <!-- Back Link -->
+        <a href="library.html" class="inline-block font-body text-sm tracking-wider uppercase opacity-60 hover:opacity-100 hover:text-brass transition-all mb-12">
+            ← Back to Library
+        </a>
+
+        <!-- Article Header -->
+        <header class="mb-12 pb-12 border-b border-ink/10 dark:border-brass/20">
+            <span class="inline-block font-body text-xs tracking-widest uppercase opacity-50 mb-4" id="category"></span>
+            <h1 class="font-serif text-5xl md:text-6xl mb-6 leading-tight" id="title">Loading...</h1>
+            <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 mb-6">
+                <p class="font-body text-lg opacity-60" id="author"></p>
+            </div>
+            <a href="#" id="originalLink" target="_blank" rel="noopener noreferrer"
+               class="inline-block font-body text-sm tracking-wider uppercase text-brass hover:underline">
+                Read Original →
+            </a>
+        </header>
+
+        <!-- Uday's Marginalia -->
+        <section class="mb-16 bg-ink/5 dark:bg-brass/10 p-10 border-l-4 border-brass">
+            <h2 class="font-serif text-2xl mb-6 text-brass">Uday's Marginalia</h2>
+            <div class="font-body text-lg leading-relaxed italic" id="marginalia"></div>
+        </section>
+
+        <!-- Excerpt or Full Content -->
+        <section class="prose-custom" id="content">
+            <!-- Content will be loaded here -->
+        </section>
+
+        <!-- Navigation to Next Artifact -->
+        <footer class="mt-20 pt-12 border-t border-ink/10 dark:border-brass/20 text-center">
+            <a href="library.html?random=true"
+               class="inline-block font-body text-sm tracking-widest uppercase text-brass hover:underline">
+                Discover another artifact →
+            </a>
+        </footer>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="border-t border-ink/10 dark:border-brass/20 mt-20">
+        <div class="max-w-3xl mx-auto px-6 py-12">
+            <p class="font-body text-sm opacity-60 mb-4 tracking-wide">
+                Collected slowly, by Uday
+            </p>
+            <blockquote class="font-serif text-base italic opacity-50 border-l-2 border-brass/30 pl-6">
+                "Wisdom is not what you know. It is how you hold what you know."
+            </blockquote>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Artifact data
+        const artifacts = {
+            '1': {
+                category: '[Thought]',
+                title: 'Everything is a Win When the Goal is to Experience',
+                author: 'by Sentimental Being',
+                link: 'https://yearlyblues.substack.com/p/everything-is-a-win-when-the-goal',
+                marginalia: `This piece shifted how I think about success and failure. If the goal isn't to win but to experience, then nothing is wasted. Every mistake, every detour, every painful lesson—it all counts. It's not about outcomes. It's about what you learn from being alive and paying attention.<br><br>
+
+                What stays with me: the idea that life isn't a test you pass or fail. It's a series of moments you get to feel fully. And if you're present for those moments—really present—then you're already winning. Not because you got what you wanted, but because you were there for what happened.<br><br>
+
+                This essay taught me to stop asking "Did I succeed?" and start asking "What did I experience? What did I learn?" That shift changes everything.`,
+                content: `
+                    <blockquote class="font-serif text-xl leading-relaxed italic border-l-4 border-brass pl-8 my-12 py-4">
+                        "When the goal is to experience, every outcome becomes a win. Because you're not measuring against success or failure—you're measuring against presence."
+                    </blockquote>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        <span class="font-serif text-5xl float-left mr-3 mt-1 leading-none text-brass">W</span>e're
+                        taught from an early age that life is about achieving things. Get good grades. Land the job. Hit the milestone.
+                        Win the game. And if you don't? You failed. You wasted time. You should have tried harder, done better, been more.
+                    </p>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        But what if that's the wrong frame entirely? What if the goal isn't to win, but to experience? To be present
+                        for what happens, whether it's triumph or heartbreak, clarity or confusion, joy or grief?
+                    </p>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        This essay argues that when you shift the goal from achievement to experience, everything changes. You stop
+                        judging moments by whether they worked out. You start asking: What did I feel? What did I learn? What did
+                        this teach me about being human?
+                    </p>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        The insight isn't that failure doesn't matter. It's that failure is just another kind of experience—and if
+                        you're paying attention, it teaches you more than success ever could. The job you didn't get, the relationship
+                        that ended, the project that flopped—those aren't losses. They're data. They're part of the story. They count.
+                    </p>
+
+                    <blockquote class="font-serif text-xl leading-relaxed italic border-l-4 border-brass pl-8 my-12 py-4">
+                        "You didn't waste time. You lived it. And living it fully—even when it hurts—is the whole point."
+                    </blockquote>
+
+                    <p class="font-body text-lg leading-relaxed">
+                        This reframe doesn't make hard things easy. But it makes them meaningful. It turns regret into reflection,
+                        failure into feedback, pain into presence. And that, I think, is the closest thing to wisdom: knowing that
+                        every experience—good, bad, beautiful, ugly—is a win if you were there for it.
+                    </p>
+                `
+            },
+            '2': {
+                category: '[Thought]',
+                title: 'Literally Just Do Things',
+                author: 'by Erifili Gounari',
+                link: 'https://erifili.substack.com/p/literally-just-do-things',
+                marginalia: `The simplest advice is often the hardest to follow. This essay reminded me that overthinking is just fear dressed up as strategy. Most of the time, the thing you're avoiding isn't actually hard—you're just scared of what happens if you try. So: literally just do things. Start messy. Start small. Just start.<br><br>
+
+                What I carry from this: action creates clarity. You can't think your way into knowing what to do. You have to do first, and then you'll know. The doing is the thinking. The starting is the answer.<br><br>
+
+                This piece is for anyone stuck in analysis paralysis, anyone waiting for the perfect moment, anyone scared of looking stupid. Do it anyway. Literally just do things.`,
+                content: `
+                    <blockquote class="font-serif text-xl leading-relaxed italic border-l-4 border-brass pl-8 my-12 py-4">
+                        "You don't need more information. You don't need a better plan. You just need to start."
+                    </blockquote>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        <span class="font-serif text-5xl float-left mr-3 mt-1 leading-none text-brass">T</span>here's
+                        a special kind of paralysis that comes from overthinking. You tell yourself you're being careful, strategic,
+                        thoughtful. But really, you're just scared. Scared of failing. Scared of looking dumb. Scared of wasting time
+                        on the wrong thing.
+                    </p>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        So you research. You plan. You optimize. You wait for the perfect moment, the perfect idea, the perfect
+                        version of yourself who won't make mistakes. And while you wait, nothing happens. Because waiting is safe,
+                        and doing is not.
+                    </p>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        This essay cuts through all of that with brutal simplicity: literally just do things. Not perfectly. Not
+                        strategically. Not when you're ready. Just do them. Start the project. Send the message. Publish the thing.
+                        Make the call. The doing is the strategy.
+                    </p>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        Because here's the truth: you don't know what will work until you try. You can't think your way into clarity.
+                        You have to act your way into it. The insights come from doing, not from planning to do.
+                    </p>
+
+                    <blockquote class="font-serif text-xl leading-relaxed italic border-l-4 border-brass pl-8 my-12 py-4">
+                        "Action creates information. And information creates better action. But you have to start with action—messy, imperfect, uncertain action."
+                    </blockquote>
+
+                    <p class="font-body text-lg leading-relaxed">
+                        The essay isn't advocating recklessness. It's advocating movement. Because staying still feels safe, but it's
+                        not. The real risk is spending years thinking about what you could do instead of finding out what happens when
+                        you actually do it. So: literally just do things. You'll figure it out as you go.
+                    </p>
+                `
+            },
+            '3': {
+                category: '[Thought]',
+                title: 'You Share Other People\'s Thoughts Because You Don\'t Have Any of Your Own',
+                author: 'by Feifei',
+                link: 'https://feifeiwrites.substack.com/p/you-share-other-peoples-thoughts',
+                marginalia: `This one stung. It's easier to curate than to create. Easier to retweet than to think. I've been guilty of this—filling my brain with other people's ideas and calling it learning. But real thinking is harder. It's sitting with a question long enough to form your own answer. This essay is a wake-up call.<br><br>
+
+                What hit hardest: the idea that consumption can become a defense mechanism. If you're always reading, always listening, always absorbing, you never have to risk being wrong. You never have to say something uncertain or incomplete. You just echo what smarter people said.<br><br>
+
+                This essay taught me that having your own thoughts—even half-formed, messy ones—is more valuable than perfectly repeating someone else's. Thinking is vulnerable. But it's the only way to become yourself.`,
+                content: `
+                    <blockquote class="font-serif text-xl leading-relaxed italic border-l-4 border-brass pl-8 my-12 py-4">
+                        "Sharing is easy. Thinking is hard. And we've built a culture that rewards the former while pretending it's the latter."
+                    </blockquote>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        <span class="font-serif text-5xl float-left mr-3 mt-1 leading-none text-brass">I</span>t's
+                        never been easier to look smart. Retweet the right thread. Share the insightful essay. Quote the brilliant
+                        thinker. You get to signal intelligence without ever having to produce an original thought. You get credit
+                        for curation.
+                    </p>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        But curation isn't thinking. It's filtering. And filtering is valuable—but it's not the same as creation.
+                        When you only share other people's ideas, you're outsourcing your intellectual life. You're letting others
+                        do the hard work of synthesis, judgment, and risk.
+                    </p>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        This essay asks a brutal question: Why don't you have your own thoughts? And it suggests an uncomfortable
+                        answer: because having your own thoughts is scary. What if you're wrong? What if you sound dumb? What if
+                        someone smarter disagrees?
+                    </p>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        So instead, you hide behind the thoughts of others. You quote, you cite, you reference. And you never have
+                        to risk being you—uncertain, incomplete, still figuring it out.
+                    </p>
+
+                    <blockquote class="font-serif text-xl leading-relaxed italic border-l-4 border-brass pl-8 my-12 py-4">
+                        "The point isn't to stop reading. It's to start thinking for yourself. To sit with a question long enough that you form your own answer—even if it's messy, even if it changes."
+                    </blockquote>
+
+                    <p class="font-body text-lg leading-relaxed">
+                        Real thinking is generative, not consumptive. It's not about collecting smart ideas. It's about wrestling
+                        with a problem until you have something to say about it—something that came from you, not from someone else's
+                        timeline. That's the only way to become a person with a point of view instead of a feed.
+                    </p>
+                `
+            },
+            '4': {
+                category: '[Thought]',
+                title: 'We Should All Talk to Strangers',
+                author: 'by Angelina Hazzouri',
+                link: 'https://lunchonfriday.substack.com/p/we-should-all-talk-to-strangers',
+                marginalia: `In a world where we've been taught to fear strangers, this essay argues the opposite: talking to people we don't know might be the most human thing we can do. It reminds me that connection isn't just for the people we already love. Sometimes the most meaningful conversations happen with someone you'll never see again.<br><br>
+
+                What I learned: we've traded serendipity for safety. We stay in our bubbles—our phones, our friend groups, our routines—and miss the chance to be surprised by someone else's story. But strangers aren't dangerous. They're just people. And talking to them is how we remember that.<br><br>
+
+                This essay made me want to be braver about reaching out. To ask the question. To start the conversation. To risk the awkwardness for the chance of connection.`,
+                content: `
+                    <blockquote class="font-serif text-xl leading-relaxed italic border-l-4 border-brass pl-8 my-12 py-4">
+                        "We've been told to fear strangers our whole lives. But what if strangers are just friends we haven't met yet?"
+                    </blockquote>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        <span class="font-serif text-5xl float-left mr-3 mt-1 leading-none text-brass">S</span>omewhere
+                        along the way, we learned to avoid strangers. Don't talk to people you don't know. Keep your headphones in.
+                        Stay on your phone. Mind your business. It's safer that way. Easier. Less awkward.
+                    </p>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        But this essay argues we've lost something in that exchange. We've traded serendipity for safety. We've
+                        built walls around ourselves and called it boundaries. And now we live in a world where everyone is alone
+                        together—surrounded by people but connected to no one.
+                    </p>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        Talking to strangers is how we remember we're all human. The person next to you on the train has a story.
+                        The cashier at the grocery store has a life outside of work. The neighbor you've never spoken to might be
+                        exactly the person you need to meet today.
+                    </p>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        And here's the thing: most people want to connect. They're just waiting for permission. For someone to break
+                        the silence. For a small act of courage that says, "I see you. You're not invisible."
+                    </p>
+
+                    <blockquote class="font-serif text-xl leading-relaxed italic border-l-4 border-brass pl-8 my-12 py-4">
+                        "The best conversations I've ever had were with people I'll never see again. Because there's no history, no agenda, no performance. Just two people being real for a moment."
+                    </blockquote>
+
+                    <p class="font-body text-lg leading-relaxed">
+                        This essay isn't about forcing connection or being naive about danger. It's about reclaiming something we've
+                        lost: the belief that other people are worth knowing. That small talk can become real talk. That the person
+                        across from you might surprise you—if you just say hello.
+                    </p>
+                `
+            },
+            '5': {
+                category: '[Psychology]',
+                title: 'In Order to Love Who You Are, You Must Not Hate the Experiences That Shaped You',
+                author: 'by Letters from Rosie',
+                link: 'https://lynwritess.substack.com/p/in-order-to-love-who-you-are-you',
+                marginalia: `Self-acceptance isn't about erasing your past. It's about integrating it. This piece taught me that you can't love who you are while hating what made you. The painful parts, the embarrassing parts, the parts you wish you could undo—they're all you. And they all count.<br><br>
+
+                What stays with me: the idea that healing isn't about forgetting. It's about reframing. You don't have to be grateful for the hard things. But you do have to stop resenting them. Because resentment keeps you stuck in the past. Acceptance lets you move forward.<br><br>
+
+                This essay is for anyone who's spent years wishing they could rewrite their story. You can't. But you can change how you hold it.`,
+                content: `
+                    <blockquote class="font-serif text-xl leading-relaxed italic border-l-4 border-brass pl-8 my-12 py-4">
+                        "You can't selectively numb the past. If you hate what shaped you, you'll hate what it made."
+                    </blockquote>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        <span class="font-serif text-5xl float-left mr-3 mt-1 leading-none text-brass">W</span>e
+                        all have parts of our past we wish we could undo. The mistakes. The trauma. The moments we're not proud of.
+                        And so we spend years trying to distance ourselves from those experiences. We tell ourselves, "That's not
+                        who I am anymore. I've moved on. I'm different now."
+                    </p>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        But this essay argues that you can't love who you are while hating what made you. Because you are the sum
+                        of your experiences—all of them. The good, the bad, the painful, the transformative. You don't get to
+                        cherry-pick which parts count.
+                    </p>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        Self-acceptance isn't about pretending the hard things didn't happen. It's about integrating them. It's
+                        about saying, "Yes, that happened. And it hurt. And it changed me. And I'm still here."
+                    </p>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        The essay isn't asking you to be grateful for your pain. It's asking you to stop resenting it. Because
+                        resentment keeps you stuck. It keeps you at war with your own history. And you can't build a future when
+                        you're still fighting the past.
+                    </p>
+
+                    <blockquote class="font-serif text-xl leading-relaxed italic border-l-4 border-brass pl-8 my-12 py-4">
+                        "Healing isn't about forgetting. It's about no longer being controlled by what you remember."
+                    </blockquote>
+
+                    <p class="font-body text-lg leading-relaxed">
+                        This is the paradox of self-love: you have to accept the whole story—not just the chapters you're proud of.
+                        You have to stop wishing you were someone else, with a different past, a cleaner origin story. You have to
+                        look at everything that shaped you and say, "This is mine. And I'm still becoming."
+                    </p>
+                `
+            },
+            '6': {
+                category: '[Psychology]',
+                title: 'The Paradox of Craving to Be Seen But Fearing Being Known',
+                author: 'by Harls',
+                link: 'https://harlsrana.substack.com/p/the-paradox-of-craving-to-be-seen',
+                marginalia: `We all want to be understood, but we're terrified of being truly seen. This piece named something I'd felt but never articulated: the gap between wanting attention and fearing intimacy. It's easier to perform than to be vulnerable. Easier to curate than to reveal. This essay is a mirror for anyone hiding in plain sight.<br><br>
+
+                What hit hardest: the idea that we build entire personas to avoid being known. We share just enough to seem open, but not enough to be vulnerable. We want the validation of being seen, but not the risk of being rejected for who we actually are.<br><br>
+
+                This essay taught me that real connection requires real exposure. You can't be loved for who you are if no one knows who you are. And that's terrifying. But it's also the only way.`,
+                content: `
+                    <blockquote class="font-serif text-xl leading-relaxed italic border-l-4 border-brass pl-8 my-12 py-4">
+                        "We want to be seen. We just don't want anyone to look too closely."
+                    </blockquote>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        <span class="font-serif text-5xl float-left mr-3 mt-1 leading-none text-brass">T</span>here's
+                        a paradox at the heart of modern life: we crave attention, but we fear intimacy. We post our lives online,
+                        curate our feeds, perform our personalities—all in the hope that someone will see us, understand us, validate us.
+                    </p>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        But the moment someone gets too close, we panic. We pull back. We deflect. Because being seen is one thing—being
+                        known is another. And being known means someone might see the messy parts, the uncertain parts, the parts we
+                        don't want to admit exist.
+                    </p>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        This essay explores that tension. The way we construct personas to keep people at a safe distance. The way we
+                        share just enough to seem open, but not enough to be vulnerable. The way we want connection without risk.
+                    </p>
+
+                    <p class="font-body text-lg leading-relaxed mb-6">
+                        But here's the catch: you can't be loved for who you are if no one knows who you are. And you can't be known
+                        without being vulnerable. Which means the thing we want most—real connection—requires the thing we fear most:
+                        exposure.
+                    </p>
+
+                    <blockquote class="font-serif text-xl leading-relaxed italic border-l-4 border-brass pl-8 my-12 py-4">
+                        "We perform openness. But performance isn't vulnerability. It's just another way to hide."
+                    </blockquote>
+
+                    <p class="font-body text-lg leading-relaxed">
+                        The essay doesn't have an easy answer. But it names the problem clearly: if you want to be known, you have to
+                        stop performing. You have to risk being seen—really seen—by someone who might not like what they find. And that's
+                        terrifying. But it's also the only way to stop being lonely in a room full of people who think they know you.
+                    </p>
+                `
+            }
+        };
+
+        // Get artifact ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const artifactId = urlParams.get('id') || '1';
+
+        // Load artifact data
+        const artifact = artifacts[artifactId];
+        if (artifact) {
+            document.getElementById('category').textContent = artifact.category;
+            document.getElementById('title').textContent = artifact.title;
+            document.getElementById('author').textContent = artifact.author;
+            document.getElementById('marginalia').innerHTML = artifact.marginalia;
+            document.getElementById('content').innerHTML = artifact.content;
+
+            const linkElement = document.getElementById('originalLink');
+            if (artifact.link === '#') {
+                linkElement.style.display = 'none';
+            } else {
+                linkElement.href = artifact.link;
+            }
+
+            // Update page title
+            document.title = `${artifact.title} – Uday's Cabinet of Curiosities`;
+        }
+    </script>
+</body>
+</html>

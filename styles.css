@@ -1,0 +1,156 @@
+/* Paper texture background */
+body {
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.03) 0px,
+            transparent 1px,
+            transparent 2px,
+            rgba(0, 0, 0, 0.03) 3px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.03) 0px,
+            transparent 1px,
+            transparent 2px,
+            rgba(0, 0, 0, 0.03) 3px
+        );
+}
+
+.dark body {
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            rgba(191, 167, 106, 0.03) 0px,
+            transparent 1px,
+            transparent 2px,
+            rgba(191, 167, 106, 0.03) 3px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(191, 167, 106, 0.03) 0px,
+            transparent 1px,
+            transparent 2px,
+            rgba(191, 167, 106, 0.03) 3px
+        );
+}
+
+/* Typography refinements */
+.prose-custom p {
+    margin-bottom: 1.5rem;
+}
+
+.prose-custom blockquote {
+    margin: 3rem 0;
+    padding: 1.5rem 2rem;
+    border-left: 4px solid #BFA76A;
+}
+
+.prose-custom ul {
+    margin: 2rem 0;
+}
+
+.prose-custom ul li {
+    margin-bottom: 1rem;
+}
+
+/* Filter tab active state */
+.filter-tab.active {
+    background-color: #1C1B1A;
+    color: #F4F1EA;
+    border-color: #1C1B1A;
+}
+
+.dark .filter-tab.active {
+    background-color: #BFA76A;
+    color: #2A2622;
+    border-color: #BFA76A;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+    background-color: #BFA76A;
+    color: #1C1B1A;
+}
+
+.dark ::selection {
+    background-color: #BFA76A;
+    color: #2A2622;
+}
+
+/* Drop cap styling for first paragraph */
+.drop-cap::first-letter {
+    font-family: 'EB Garamond', serif;
+    font-size: 3.5rem;
+    line-height: 1;
+    float: left;
+    margin-right: 0.75rem;
+    margin-top: 0.25rem;
+    color: #BFA76A;
+}
+
+/* Link underline animation */
+a {
+    text-decoration: none;
+    position: relative;
+}
+
+a:not(.filter-tab):not(nav a):hover {
+    text-decoration: none;
+}
+
+/* Fade-in animation for page load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Print styles */
+@media print {
+    nav,
+    footer,
+    #darkModeToggle,
+    .filter-tab,
+    #emptyState {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+}
+
+/* Responsive typography scaling */
+@media (max-width: 640px) {
+    .prose-custom p,
+    .prose-custom ul li {
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+
+    .prose-custom blockquote {
+        font-size: 1.125rem;
+        padding: 1rem 1.5rem;
+    }
+}

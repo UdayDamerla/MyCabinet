@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Library – Uday's Cabinet of Curiosities</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        parchment: '#F4F1EA',
+                        ink: '#1C1B1A',
+                        brass: '#BFA76A',
+                        forest: '#3A4D41',
+                        'sepia-dark': '#2A2622',
+                        'sepia-medium': '#3D3732',
+                    },
+                    fontFamily: {
+                        serif: ['"EB Garamond"', 'serif'],
+                        body: ['Lora', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-parchment text-ink dark:bg-sepia-dark dark:text-parchment transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav class="border-b border-ink/10 dark:border-brass/20 py-6">
+        <div class="max-w-5xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-lg tracking-wide hover:text-brass transition-colors">Home</a>
+            <div class="flex gap-8 items-center">
+                <a href="library.html" class="font-body text-sm tracking-wider uppercase text-brass">The Library</a>
+                <a href="about.html" class="font-body text-sm tracking-wider uppercase opacity-70 hover:opacity-100 hover:text-brass transition-all">About</a>
+                <button id="darkModeToggle" class="opacity-70 hover:opacity-100 transition-opacity" aria-label="Toggle dark mode">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path class="dark:hidden" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        <path class="hidden dark:block" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="max-w-5xl mx-auto px-6 pt-16 pb-12">
+        <h1 class="font-serif text-5xl md:text-6xl mb-6 leading-tight">
+            The Library
+        </h1>
+        <p class="font-body text-lg opacity-60 max-w-2xl">
+            Index cards on a shelf. Each artifact is something that taught me how to think, feel, or understand a little better.
+        </p>
+    </header>
+
+    <!-- Filter Tabs -->
+    <section class="max-w-5xl mx-auto px-6 pb-8 border-b border-ink/10 dark:border-brass/20">
+        <div class="flex flex-wrap gap-3">
+            <button class="filter-tab active font-body text-sm tracking-wider uppercase px-4 py-2 border border-ink/20 dark:border-brass/30 hover:border-brass hover:text-brass transition-all" data-filter="all">
+                All
+            </button>
+            <button class="filter-tab font-body text-sm tracking-wider uppercase px-4 py-2 border border-ink/20 dark:border-brass/30 hover:border-brass hover:text-brass transition-all" data-filter="psychology">
+                Psychology
+            </button>
+            <button class="filter-tab font-body text-sm tracking-wider uppercase px-4 py-2 border border-ink/20 dark:border-brass/30 hover:border-brass hover:text-brass transition-all" data-filter="thought">
+                Thought
+            </button>
+        </div>
+    </section>
+
+    <!-- Artifacts Grid -->
+    <section class="max-w-5xl mx-auto px-6 py-16">
+        <div id="artifactsContainer" class="space-y-8">
+
+            <!-- Artifact Card 1 -->
+            <article class="artifact-card border border-ink/10 dark:border-brass/20 p-8 hover:border-brass transition-all" data-category="thought">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                    <div class="flex-1">
+                        <span class="inline-block font-body text-xs tracking-widest uppercase opacity-50 mb-2">[Thought]</span>
+                        <h2 class="font-serif text-3xl mb-2 leading-tight">
+                            <a href="artifact.html?id=1" class="hover:text-brass transition-colors">Everything is a Win When the Goal is to Experience</a>
+                        </h2>
+                        <p class="font-body text-sm opacity-60">by Sentimental Being</p>
+                    </div>
+                </div>
+                <div class="border-l-2 border-brass/20 pl-6">
+                    <p class="font-body text-base italic leading-relaxed opacity-80">
+                        This piece shifted how I think about success and failure. If the goal isn't to win but to experience, then
+                        nothing is wasted. Every mistake, every detour, every painful lesson—it all counts. It's not about outcomes.
+                        It's about what you learn from being alive and paying attention.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Artifact Card 2 -->
+            <article class="artifact-card border border-ink/10 dark:border-brass/20 p-8 hover:border-brass transition-all" data-category="thought">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                    <div class="flex-1">
+                        <span class="inline-block font-body text-xs tracking-widest uppercase opacity-50 mb-2">[Thought]</span>
+                        <h2 class="font-serif text-3xl mb-2 leading-tight">
+                            <a href="artifact.html?id=2" class="hover:text-brass transition-colors">Literally Just Do Things</a>
+                        </h2>
+                        <p class="font-body text-sm opacity-60">by Erifili Gounari</p>
+                    </div>
+                </div>
+                <div class="border-l-2 border-brass/20 pl-6">
+                    <p class="font-body text-base italic leading-relaxed opacity-80">
+                        The simplest advice is often the hardest to follow. This essay reminded me that overthinking is just fear
+                        dressed up as strategy. Most of the time, the thing you're avoiding isn't actually hard—you're just scared
+                        of what happens if you try. So: literally just do things. Start messy. Start small. Just start.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Artifact Card 3 -->
+            <article class="artifact-card border border-ink/10 dark:border-brass/20 p-8 hover:border-brass transition-all" data-category="thought">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                    <div class="flex-1">
+                        <span class="inline-block font-body text-xs tracking-widest uppercase opacity-50 mb-2">[Thought]</span>
+                        <h2 class="font-serif text-3xl mb-2 leading-tight">
+                            <a href="artifact.html?id=3" class="hover:text-brass transition-colors">You Share Other People's Thoughts Because You Don't Have Any of Your Own</a>
+                        </h2>
+                        <p class="font-body text-sm opacity-60">by Feifei</p>
+                    </div>
+                </div>
+                <div class="border-l-2 border-brass/20 pl-6">
+                    <p class="font-body text-base italic leading-relaxed opacity-80">
+                        This one stung. It's easier to curate than to create. Easier to retweet than to think. I've been guilty of
+                        this—filling my brain with other people's ideas and calling it learning. But real thinking is harder. It's
+                        sitting with a question long enough to form your own answer. This essay is a wake-up call.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Artifact Card 4 -->
+            <article class="artifact-card border border-ink/10 dark:border-brass/20 p-8 hover:border-brass transition-all" data-category="thought">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                    <div class="flex-1">
+                        <span class="inline-block font-body text-xs tracking-widest uppercase opacity-50 mb-2">[Thought]</span>
+                        <h2 class="font-serif text-3xl mb-2 leading-tight">
+                            <a href="artifact.html?id=4" class="hover:text-brass transition-colors">We Should All Talk to Strangers</a>
+                        </h2>
+                        <p class="font-body text-sm opacity-60">by Angelina Hazzouri</p>
+                    </div>
+                </div>
+                <div class="border-l-2 border-brass/20 pl-6">
+                    <p class="font-body text-base italic leading-relaxed opacity-80">
+                        In a world where we've been taught to fear strangers, this essay argues the opposite: talking to people we
+                        don't know might be the most human thing we can do. It reminds me that connection isn't just for the people
+                        we already love. Sometimes the most meaningful conversations happen with someone you'll never see again.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Artifact Card 5 -->
+            <article class="artifact-card border border-ink/10 dark:border-brass/20 p-8 hover:border-brass transition-all" data-category="psychology">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                    <div class="flex-1">
+                        <span class="inline-block font-body text-xs tracking-widest uppercase opacity-50 mb-2">[Psychology]</span>
+                        <h2 class="font-serif text-3xl mb-2 leading-tight">
+                            <a href="artifact.html?id=5" class="hover:text-brass transition-colors">In Order to Love Who You Are, You Must Not Hate the Experiences That Shaped You</a>
+                        </h2>
+                        <p class="font-body text-sm opacity-60">by Letters from Rosie</p>
+                    </div>
+                </div>
+                <div class="border-l-2 border-brass/20 pl-6">
+                    <p class="font-body text-base italic leading-relaxed opacity-80">
+                        Self-acceptance isn't about erasing your past. It's about integrating it. This piece taught me that you can't
+                        love who you are while hating what made you. The painful parts, the embarrassing parts, the parts you wish
+                        you could undo—they're all you. And they all count.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Artifact Card 6 -->
+            <article class="artifact-card border border-ink/10 dark:border-brass/20 p-8 hover:border-brass transition-all" data-category="psychology">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                    <div class="flex-1">
+                        <span class="inline-block font-body text-xs tracking-widest uppercase opacity-50 mb-2">[Psychology]</span>
+                        <h2 class="font-serif text-3xl mb-2 leading-tight">
+                            <a href="artifact.html?id=6" class="hover:text-brass transition-colors">The Paradox of Craving to Be Seen But Fearing Being Known</a>
+                        </h2>
+                        <p class="font-body text-sm opacity-60">by Harls</p>
+                    </div>
+                </div>
+                <div class="border-l-2 border-brass/20 pl-6">
+                    <p class="font-body text-base italic leading-relaxed opacity-80">
+                        We all want to be understood, but we're terrified of being truly seen. This piece named something I'd felt
+                        but never articulated: the gap between wanting attention and fearing intimacy. It's easier to perform than
+                        to be vulnerable. Easier to curate than to reveal. This essay is a mirror for anyone hiding in plain sight.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden text-center py-20">
+            <p class="font-body text-lg opacity-50">No artifacts found in this category.</p>
+            <button onclick="document.querySelector('[data-filter=all]').click()"
+                    class="mt-6 font-body text-sm tracking-wider uppercase text-brass hover:underline">
+                View all artifacts
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-ink/10 dark:border-brass/20 mt-20">
+        <div class="max-w-5xl mx-auto px-6 py-12">
+            <p class="font-body text-sm opacity-60 mb-4 tracking-wide">
+                Collected slowly, by Uday
+            </p>
+            <blockquote class="font-serif text-base italic opacity-50 border-l-2 border-brass/30 pl-6">
+                "Wisdom is not what you know. It is how you hold what you know."
+            </blockquote>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Filter functionality
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        const artifactCards = document.querySelectorAll('.artifact-card');
+        const emptyState = document.getElementById('emptyState');
+        const artifactsContainer = document.getElementById('artifactsContainer');
+
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const filter = tab.dataset.filter;
+
+                // Update active state
+                filterTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // Filter artifacts
+                let visibleCount = 0;
+                artifactCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Show/hide empty state
+                if (visibleCount === 0) {
+                    artifactsContainer.style.display = 'none';
+                    emptyState.classList.remove('hidden');
+                } else {
+                    artifactsContainer.style.display = 'block';
+                    emptyState.classList.add('hidden');
+                }
+            });
+        });
+
+        // Handle random artifact from URL
+        if (window.location.search.includes('random=true')) {
+            const randomCard = artifactCards[Math.floor(Math.random() * artifactCards.length)];
+            const link = randomCard.querySelector('a');
+            if (link) {
+                window.location.href = link.href;
+            }
+        }
+    </script>
+</body>
+</html>
